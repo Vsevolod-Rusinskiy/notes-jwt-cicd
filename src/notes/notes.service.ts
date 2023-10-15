@@ -7,25 +7,27 @@ import { UpdateNoteDto } from './dto/update-note.dto';
 
 @Injectable()
 export class NotesService {
-    constructor(@InjectModel(Note.name) private noteModel: Model<Note>) {}
+  constructor(@InjectModel(Note.name) private noteModel: Model<Note>) {}
 
-    async create(createNoteDto: CreateNoteDto): Promise<Note> {
-        return this.noteModel.create(createNoteDto);
-    }
+  async create(createNoteDto: CreateNoteDto): Promise<Note> {
+    return this.noteModel.create(createNoteDto);
+  }
 
-    async findAll(): Promise<Note[]> {
-        return this.noteModel.find().exec();
-    }
+  async findAll(): Promise<Note[]> {
+    return this.noteModel.find().exec();
+  }
 
-    async findOne(id: string): Promise<Note> {
-        return this.noteModel.findById(id).exec();
-    }
+  async findOne(id: string): Promise<Note> {
+    return this.noteModel.findById(id).exec();
+  }
 
-    async update(id: string, updateNoteDto: UpdateNoteDto): Promise<Note> {
-        return this.noteModel.findByIdAndUpdate(id, updateNoteDto, { new: true }).exec();
-    }
+  async update(id: string, updateNoteDto: UpdateNoteDto): Promise<Note> {
+    return this.noteModel
+      .findByIdAndUpdate(id, updateNoteDto, { new: true })
+      .exec();
+  }
 
-    async delete(id: string): Promise<Note> {
-        return this.noteModel.findByIdAndRemove(id).exec();
-    }
+  async delete(id: string): Promise<Note> {
+    return this.noteModel.findByIdAndRemove(id).exec();
+  }
 }

@@ -4,10 +4,7 @@ import { BlacklistModule } from '../blacklist/blacklist.module';
 import { TasksService } from './task.service';
 
 @Module({
-    imports: [
-        ScheduleModule.forRoot(),
-        BlacklistModule
-    ],
-    providers: [TasksService],
+  imports: [ScheduleModule.forRoot(), BlacklistModule],
+  providers: [TasksService],
 })
 export class TasksModule {}

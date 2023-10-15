@@ -3,11 +3,12 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class BlacklistedToken extends Document {
-    @Prop({ required: true })
-    token: string;
+  @Prop({ required: true })
+  token: string;
 
-    @Prop({ required: true })
-    expiryDate: Date;
+  @Prop({ required: true })
+  expiryDate: Date;
 }
 
-export const BlacklistedTokenSchema = SchemaFactory.createForClass(BlacklistedToken);
+export const BlacklistedTokenSchema =
+  SchemaFactory.createForClass(BlacklistedToken);
