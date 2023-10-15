@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - 'main'
 
 jobs:
   build_and_test:
@@ -33,4 +33,3 @@ jobs:
 
       - name: Run e2e tests
         run: npm run test:e2e
-
